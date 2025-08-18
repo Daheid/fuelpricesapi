@@ -20,7 +20,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $exceptions->renderable(function (NotFoundHttpException $e, $request) {
             return response()->json([
                 'error' => 'Route not found or not allowed',
-                'message' => 'The requested URL was not found on this server.',
+                'message' => 'Please read the Documentation.',
+                'Documentation' => 'https://fuelpricesapi.nelsoncarrero.dev/docs',
                 'status' => 404,
             ], 404);
         });

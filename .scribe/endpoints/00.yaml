@@ -1,0 +1,173 @@
+name: Endpoints
+description: ""
+endpoints:
+  - httpMethods:
+      - GET
+    uri: api/v1/prices/filter/eia
+    metadata:
+      groupName: Endpoints
+      groupDescription: ""
+      subgroup: ""
+      subgroupDescription: ""
+      title: "GET api/v1/prices/filter/eia"
+      description: ""
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      period:
+        name: period
+        description: "Fecha del periodo a consultar en formato YYYY-MM-DD."
+        example: "2025-08-17"
+        required: true
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      area:
+        name: area
+        description: "Área a consultar el precio."
+        required: true
+        example: All
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      product:
+        name: product
+        description: "Producto a consultar"
+        required: true
+        example: All
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      period: "2025-08-17"
+      area: "All"
+      product: "All"
+    fileParameters: []
+    responses:
+      - status: 200
+        content: |-
+          {
+            "requested_period": "2025-08-17",
+            "adjusted_period": "2025-08-11",
+            "area": "all",
+            "product": "all",
+            "data": []
+          }
+        headers: []
+        description: success
+        custom: []
+      - status: 422
+        content: |-
+          {
+            "Message": "The period field is required. (and 2 more errors)",
+            "errors": {
+              "period": [
+                "The period field is required."
+              ],
+              "area": [
+                "The area field is required."
+              ],
+              "product": [
+                "The product field is required."
+              ]
+            }
+          }
+        headers: []
+        description: success
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  - httpMethods:
+      - GET
+    uri: api/v1/areas/filter/eia
+    metadata:
+      groupName: Endpoints
+      groupDescription: ""
+      subgroup: ""
+      subgroupDescription: ""
+      title: ""
+      description: ""
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      - status: 200
+        content: '{"data":[{"id":1,"name":"padd_5","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":2,"name":"padd_1","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":3,"name":"california","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":4,"name":"padd_1a","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":5,"name":"ohio","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":6,"name":"new_york_city","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":7,"name":"seattle","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":8,"name":"boston","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":9,"name":"washington","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":10,"name":"new_york","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":11,"name":"padd_2","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":12,"name":"padd_1b","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":13,"name":"denver","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":14,"name":"cleveland","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":16,"name":"padd_3","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":17,"name":"florida","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":18,"name":"colorado","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":19,"name":"padd_4","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":20,"name":"los_angeles","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":21,"name":"chicago","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":22,"name":"padd_5_except_california","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":23,"name":"minnesota","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":24,"name":"houston","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":25,"name":"texas","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":26,"name":"miami","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":27,"name":"san_francisco","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":28,"name":"padd_1c","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":29,"name":"massachusetts","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"}]}'
+        headers:
+          cache-control: "no-cache, private"
+          content-type: application/json
+          access-control-allow-origin: "*"
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  - httpMethods:
+      - GET
+    uri: api/v1/products/filter/eia
+    metadata:
+      groupName: Endpoints
+      groupDescription: ""
+      subgroup: ""
+      subgroupDescription: ""
+      title: ""
+      description: ""
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      - status: 200
+        content: '{"data":[{"id":1,"name":"no_2_diesel_low_sulfur_015_ppm","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":2,"name":"no_2_diesel","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":3,"name":"conventional_regular_gasoline","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":4,"name":"reformulated_regular_gasoline","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":5,"name":"regular_gasoline","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":6,"name":"conventional_premium_gasoline","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":7,"name":"reformulated_premium_gasoline","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":8,"name":"premium_gasoline","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":9,"name":"gasoline_reformulated_midgrade","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":10,"name":"midgrade_gasoline","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":11,"name":"conventional_gasoline_no_oxy","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":12,"name":"reformulated_motor_gasoline","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":13,"name":"total_gasoline","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"},{"id":14,"name":"gasoline_conventional_midgrade","created_at":"2025-08-18T16:29:20.000000Z","updated_at":"2025-08-18T16:29:20.000000Z"}]}'
+        headers:
+          cache-control: "no-cache, private"
+          content-type: application/json
+          access-control-allow-origin: "*"
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
