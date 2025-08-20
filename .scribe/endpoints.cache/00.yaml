@@ -5,14 +5,14 @@ description: ''
 endpoints:
   -
     httpMethods:
-      - GET
+      - POST
     uri: api/v1/prices/filter/eia
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'GET api/v1/prices/filter/eia'
+      title: ''
       description: ''
       authenticated: false
       deprecated: false
@@ -27,9 +27,9 @@ endpoints:
     bodyParameters:
       period:
         name: period
-        description: 'Fecha del periodo a consultar en formato YYYY-MM-DD. example: 2025-08-17'
+        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: true
-        example: architecto
+        example: '2025-08-20'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -37,7 +37,7 @@ endpoints:
         custom: []
       area:
         name: area
-        description: 'Área a consultar (ejemplo: "all", "north", "south"). Ejemplo: all'
+        description: ''
         required: true
         example: architecto
         type: string
@@ -47,7 +47,7 @@ endpoints:
         custom: []
       product:
         name: product
-        description: 'Producto a consultar (ejemplo: "all", "gasoline", "diesel"). Ejemplo: all'
+        description: 'Puede ser "all" o un área específica.'
         required: true
         example: architecto
         type: string
@@ -56,24 +56,11 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      period: architecto
+      period: '2025-08-20'
       area: architecto
       product: architecto
     fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-            "requested_period": "2025-08-17",
-            "adjusted_period": "2025-08-11",
-            "area": "all",
-            "product": "all",
-            "data": []
-          }
-        headers: []
-        description: success
-        custom: []
+    responses: []
     responseFields: []
     auth: []
     controller: null

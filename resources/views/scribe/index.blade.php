@@ -66,8 +66,8 @@
                     <a href="#endpoints">Endpoints</a>
                 </li>
                                     <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-prices-filter-eia">
-                                <a href="#endpoints-GETapi-v1-prices-filter-eia">GET api/v1/prices/filter/eia</a>
+                                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-prices-filter-eia">
+                                <a href="#endpoints-POSTapi-v1-prices-filter-eia">POST api/v1/prices/filter/eia</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-areas-filter-eia">
                                 <a href="#endpoints-GETapi-v1-areas-filter-eia">GET api/v1/areas/filter/eia</a>
@@ -86,7 +86,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: August 18, 2025</li>
+        <li>Last updated: August 20, 2025</li>
     </ul>
 </div>
 
@@ -104,26 +104,26 @@
 
     
 
-                                <h2 id="endpoints-GETapi-v1-prices-filter-eia">GET api/v1/prices/filter/eia</h2>
+                                <h2 id="endpoints-POSTapi-v1-prices-filter-eia">POST api/v1/prices/filter/eia</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-GETapi-v1-prices-filter-eia">
+<span id="example-requests-POSTapi-v1-prices-filter-eia">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "https://fuelpricesapi.nelsoncarrero.dev/api/v1/prices/filter/eia" \
+    <pre><code class="language-bash">curl --request POST \
+    "https://fuelpricesapi.nelsoncarrero.dev/api/v1/prices/filter/eia" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"period\": \"2025-08-17\",
-    \"area\": \"All\",
-    \"product\": \"All\"
+    \"period\": \"2024-08-20\",
+    \"area\": \"all\",
+    \"product\": \"all\"
 }"
 </code></pre></div>
 
@@ -139,98 +139,65 @@ const headers = {
 };
 
 let body = {
-    "period": "2025-08-17",
-    "area": "All",
-    "product": "All"
+    "period": "2024-08-20",
+    "area": "all",
+    "product": "all"
 };
 
 fetch(url, {
-    method: "GET",
+    method: "POST",
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
-<span id="example-responses-GETapi-v1-prices-filter-eia">
-            <blockquote>
-            <p>Example response (200, success):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;requested_period&quot;: &quot;2025-08-17&quot;,
-    &quot;adjusted_period&quot;: &quot;2025-08-11&quot;,
-    &quot;area&quot;: &quot;all&quot;,
-    &quot;product&quot;: &quot;all&quot;,
-    &quot;data&quot;: []
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (422, success):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;Message&quot;: &quot;The period field is required. (and 2 more errors)&quot;,
-    &quot;errors&quot;: {
-        &quot;period&quot;: [
-            &quot;The period field is required.&quot;
-        ],
-        &quot;area&quot;: [
-            &quot;The area field is required.&quot;
-        ],
-        &quot;product&quot;: [
-            &quot;The product field is required.&quot;
-        ]
-    }
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-prices-filter-eia" hidden>
+<span id="example-responses-POSTapi-v1-prices-filter-eia">
+</span>
+<span id="execution-results-POSTapi-v1-prices-filter-eia" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-prices-filter-eia"></span>:
+                id="execution-response-status-POSTapi-v1-prices-filter-eia"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-prices-filter-eia"
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-prices-filter-eia"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-v1-prices-filter-eia" hidden>
+<span id="execution-error-POSTapi-v1-prices-filter-eia" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-prices-filter-eia">
+    <pre><code id="execution-error-message-POSTapi-v1-prices-filter-eia">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-v1-prices-filter-eia" data-method="GET"
+<form id="form-POSTapi-v1-prices-filter-eia" data-method="POST"
       data-path="api/v1/prices/filter/eia"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-prices-filter-eia', this);">
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-prices-filter-eia', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-prices-filter-eia"
-                    onclick="tryItOut('GETapi-v1-prices-filter-eia');">Try it out ⚡
+                    id="btn-tryout-POSTapi-v1-prices-filter-eia"
+                    onclick="tryItOut('POSTapi-v1-prices-filter-eia');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-prices-filter-eia"
-                    onclick="cancelTryOut('GETapi-v1-prices-filter-eia');" hidden>Cancel 🛑
+                    id="btn-canceltryout-POSTapi-v1-prices-filter-eia"
+                    onclick="cancelTryOut('POSTapi-v1-prices-filter-eia');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-prices-filter-eia"
+                    id="btn-executetryout-POSTapi-v1-prices-filter-eia"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
             </button>
             </h3>
             <p>
-            <small class="badge badge-green">GET</small>
+            <small class="badge badge-black">POST</small>
             <b><code>api/v1/prices/filter/eia</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
@@ -239,7 +206,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-prices-filter-eia"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-prices-filter-eia"
                value="application/json"
                data-component="header">
     <br>
@@ -250,7 +217,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-prices-filter-eia"
+                              name="Accept"                data-endpoint="POSTapi-v1-prices-filter-eia"
                value="application/json"
                data-component="header">
     <br>
@@ -262,33 +229,33 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="period"                data-endpoint="GETapi-v1-prices-filter-eia"
-               value="2025-08-17"
+                              name="period"                data-endpoint="POSTapi-v1-prices-filter-eia"
+               value="2024-08-20"
                data-component="body">
     <br>
-<p>Fecha del periodo a consultar en formato YYYY-MM-DD. Example: <code>2025-08-17</code></p>
+<p>Indica de que dia que requiere la informacion <code>Y-m-d</code>. Example: <code>2024-08-20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>area</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="area"                data-endpoint="GETapi-v1-prices-filter-eia"
-               value="All"
+                              name="area"                data-endpoint="POSTapi-v1-prices-filter-eia"
+               value="all"
                data-component="body">
     <br>
-<p>Área a consultar el precio. Example: <code>All</code></p>
+<p>Indica el área para la que se requiere la información. Example: <code>all</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>product</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="product"                data-endpoint="GETapi-v1-prices-filter-eia"
-               value="All"
+                              name="product"                data-endpoint="POSTapi-v1-prices-filter-eia"
+               value="all"
                data-component="body">
     <br>
-<p>Producto a consultar Example: <code>All</code></p>
+<p>Indica el producto para el que se requiere la información. Example: <code>all</code></p>
         </div>
         </form>
 
@@ -297,7 +264,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>
 </p>
 
-
+<p>Obtiene todas las areas disponibles.</p>
 
 <span id="example-requests-GETapi-v1-areas-filter-eia">
 <blockquote>Example request:</blockquote>
@@ -590,7 +557,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>
 </p>
 
-
+<p>Obtiene todos los productos disponibles.</p>
 
 <span id="example-requests-GETapi-v1-products-filter-eia">
 <blockquote>Example request:</blockquote>

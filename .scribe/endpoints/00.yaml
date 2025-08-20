@@ -2,102 +2,8 @@ name: Endpoints
 description: ""
 endpoints:
   - httpMethods:
-      - GET
+      - POST
     uri: api/v1/prices/filter/eia
-    metadata:
-      groupName: Endpoints
-      groupDescription: ""
-      subgroup: ""
-      subgroupDescription: ""
-      title: "GET api/v1/prices/filter/eia"
-      description: ""
-      authenticated: false
-      deprecated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      period:
-        name: period
-        description: "Fecha del periodo a consultar en formato YYYY-MM-DD."
-        example: "2025-08-17"
-        required: true
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      area:
-        name: area
-        description: "Área a consultar el precio."
-        required: true
-        example: All
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      product:
-        name: product
-        description: "Producto a consultar"
-        required: true
-        example: All
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanBodyParameters:
-      period: "2025-08-17"
-      area: "All"
-      product: "All"
-    fileParameters: []
-    responses:
-      - status: 200
-        content: |-
-          {
-            "requested_period": "2025-08-17",
-            "adjusted_period": "2025-08-11",
-            "area": "all",
-            "product": "all",
-            "data": []
-          }
-        headers: []
-        description: success
-        custom: []
-      - status: 422
-        content: |-
-          {
-            "Message": "The period field is required. (and 2 more errors)",
-            "errors": {
-              "period": [
-                "The period field is required."
-              ],
-              "area": [
-                "The area field is required."
-              ],
-              "product": [
-                "The product field is required."
-              ]
-            }
-          }
-        headers: []
-        description: success
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  - httpMethods:
-      - GET
-    uri: api/v1/areas/filter/eia
     metadata:
       groupName: Endpoints
       groupDescription: ""
@@ -116,6 +22,69 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
+      period:
+        name: period
+        description: "Indica de que dia que requiere la informacion <code>Y-m-d</code>."
+        required: true
+        example: "2024-08-20"
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      area:
+        name: area
+        description: "Indica el área para la que se requiere la información."
+        required: true
+        example: all
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      product:
+        name: product
+        description: "Indica el producto para el que se requiere la información."
+        required: true
+        example: all
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      period: "2025-08-20"
+      area: all
+      product: all
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  - httpMethods:
+      - GET
+    uri: api/v1/areas/filter/eia
+    metadata:
+      groupName: Endpoints
+      groupDescription: ""
+      subgroup: ""
+      subgroupDescription: ""
+      title: ""
+      description: "Obtiene todas las areas disponibles."
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses:
@@ -142,7 +111,7 @@ endpoints:
       subgroup: ""
       subgroupDescription: ""
       title: ""
-      description: ""
+      description: "Obtiene todos los productos disponibles."
       authenticated: false
       deprecated: false
       custom: []
