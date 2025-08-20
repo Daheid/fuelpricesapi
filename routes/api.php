@@ -8,6 +8,6 @@ use Illuminate\Support\Facades\Route;
 
 
 //Ruta para filtrar precios
-Route::get('/prices/filter/eia', [PricesController::class, 'filter']);
-Route::get('/areas/filter/eia', [AreasController::class, 'index']);
-Route::get('/products/filter/eia', [ProductsController::class, 'index']);
+Route::post('/prices/filter/eia', [PricesController::class, 'filter']);
+Route::post('/areas/filter/eia', [AreasController::class, 'index']);
+Route::post('/products/filter/eia', [ProductsController::class, 'index']);
