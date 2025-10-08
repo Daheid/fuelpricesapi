@@ -1,61 +1,98 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Project Title
 
-## About Laravel
+API REST en Laravel para obtener el precio de la gasolina de distintas zonas y distintos procutos derivados en los Estados Unidos, esta api trae el precio de la fecha ams cercana a la ingresada ya que el gobierno actualiza los precios una vez a la semana. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## API Reference
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### Obtener Productos
 
-## Learning Laravel
+```http
+  GET /api/v1/products/filter/eia
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Obtener Areas
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```http
+  GET api/v1/areas/filter/eia
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#### Obtener Precios
+```http
+  POST /api/v1/prices/filter/eia
+```
 
-## Laravel Sponsors
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `period`      | `string` | **Required**. Periodo para los precios. |
+| `area`      | `string` | **Required**. Area, puede ser all. |
+| `product`      | `string` | **Required**. Producto, puede ser all. |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
+## Correr en Local
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Para desplegar esta API en local debes tener en tu equipo PHP 4.4, Composer 2.8 y PostgreSQL.
 
-## Contributing
+Clone el repositorio
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+  https://github.com/Daheid/PruebaTecnica.git
+```
 
-## Code of Conduct
+Entre a la carpeta del backend
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+  cd PruebaTecnica/Backend
+```
 
-## Security Vulnerabilities
+Instale el proyecto
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+  composer install
+```
 
-## License
+cambie de .env.example a .env (configure las variables de entorno)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+  ren .env.example .env
+```
+
+cree una llave
+
+```bash
+  php artisan key:generate
+```
+
+ejecute las migraciones
+
+```bash
+  php artisan migrate
+```
+
+ejecute las seeders para poblar divisas, documentos y transacciones
+
+```bash
+  php artisan db:seed
+```
+
+inicie el servidor
+
+```bash
+  php artisan serve
+```
+## variables de entorno
+
+Para correr el proyecto, debe agregar el valor correspondiente a las siguientes variables.
+
+`DB_DATABASE=`
+`DB_USERNAME=`
+`DB_PASSWORD=`
+`EIA_API_KEY=`
+
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://www.nelsoncarrero.dev/)
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nelson-carrero-96b984202/)
+````
